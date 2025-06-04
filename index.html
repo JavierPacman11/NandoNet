@@ -1,640 +1,700 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NANDO NET - Internet Fibra Óptica</title>
-    <meta name="description" content="Internet Fibra Óptica de alta velocidad con NANDO NET. Velocidades simétricas, precios competitivos y soporte 24/7.">
+    <meta
+      name="description"
+      content="Internet Fibra Óptica de alta velocidad con NANDO NET. Velocidades simétricas, precios competitivos y soporte 24/7."
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d2d5f 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0f0f23 0%,
+          #1a1a3a 50%,
+          #2d2d5f 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
 
+      .promo-container {
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        min-height: 650px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+        border-radius: 25px;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* Lado izquierdo - Visualización de Internet y Fibra Óptica */
+      .left-section {
+        flex: 1.2;
+        min-width: 400px;
+        background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        min-height: 400px;
+      }
+
+      /* Centro de conexión principal */
+      .connection-hub {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          #00ff88 0%,
+          #0066ff 70%,
+          transparent 100%
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: hub-pulse 3s ease-in-out infinite;
+        box-shadow: 0 0 50px rgba(0, 255, 136, 0.6);
+      }
+
+      @keyframes hub-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 50px rgba(0, 255, 136, 0.6);
+        }
+        50% {
+          transform: scale(1.1);
+          box-shadow: 0 0 80px rgba(0, 255, 136, 0.8),
+            0 0 120px rgba(0, 102, 255, 0.4);
+        }
+      }
+
+      .hub-core {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(45deg, #ffffff 0%, #00ff88 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3em;
+        color: #003366;
+        font-weight: bold;
+        animation: rotate-core 8s linear infinite;
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
+      }
+
+      @keyframes rotate-core {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Rayos de conexión que salen del centro */
+      .connection-rays {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .ray {
+        position: absolute;
+        width: 300px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 255, 136, 0.8) 0%,
+          rgba(0, 255, 136, 0) 100%
+        );
+        transform-origin: 0 50%;
+        animation: ray-pulse 2s ease-in-out infinite;
+        border-radius: 2px;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+      }
+
+      .ray:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: 0s;
+      }
+      .ray:nth-child(2) {
+        transform: rotate(45deg);
+        animation-delay: 0.25s;
+      }
+      .ray:nth-child(3) {
+        transform: rotate(90deg);
+        animation-delay: 0.5s;
+      }
+      .ray:nth-child(4) {
+        transform: rotate(135deg);
+        animation-delay: 0.75s;
+      }
+      .ray:nth-child(5) {
+        transform: rotate(180deg);
+        animation-delay: 1s;
+      }
+      .ray:nth-child(6) {
+        transform: rotate(225deg);
+        animation-delay: 1.25s;
+      }
+      .ray:nth-child(7) {
+        transform: rotate(270deg);
+        animation-delay: 1.5s;
+      }
+      .ray:nth-child(8) {
+        transform: rotate(315deg);
+        animation-delay: 1.75s;
+      }
+
+      @keyframes ray-pulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scaleX(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scaleX(1.2);
+        }
+      }
+
+      /* Dispositivos conectados */
+      .connected-devices {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .device {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8em;
+        color: white;
+        animation: device-float 4s ease-in-out infinite;
+        box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4);
+      }
+
+      .device:nth-child(1) {
+        top: 10%;
+        left: 15%;
+        animation-delay: 0s;
+      }
+      .device:nth-child(2) {
+        top: 15%;
+        right: 10%;
+        animation-delay: 1s;
+      }
+      .device:nth-child(3) {
+        bottom: 20%;
+        left: 10%;
+        animation-delay: 2s;
+      }
+      .device:nth-child(4) {
+        bottom: 15%;
+        right: 15%;
+        animation-delay: 3s;
+      }
+
+      @keyframes device-float {
+        0%,
+        100% {
+          transform: translateY(0px) scale(1);
+          box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4);
+        }
+        50% {
+          transform: translateY(-15px) scale(1.05);
+          box-shadow: 0 20px 40px rgba(79, 172, 254, 0.6);
+        }
+      }
+
+      /* Ondas de señal WiFi */
+      .wifi-waves {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .wave {
+        position: absolute;
+        border: 3px solid rgba(0, 255, 136, 0.3);
+        border-radius: 50%;
+        animation: wave-expand 3s ease-out infinite;
+      }
+
+      .wave:nth-child(1) {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        animation-delay: 0s;
+      }
+      .wave:nth-child(2) {
+        width: 250px;
+        height: 250px;
+        margin: -125px 0 0 -125px;
+        animation-delay: 1s;
+      }
+      .wave:nth-child(3) {
+        width: 350px;
+        height: 350px;
+        margin: -175px 0 0 -175px;
+        animation-delay: 2s;
+      }
+
+      @keyframes wave-expand {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+          border-color: rgba(0, 255, 136, 0.8);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+          border-color: rgba(0, 255, 136, 0);
+        }
+      }
+
+      /* Lado derecho - Información */
+      .right-section {
+        flex: 1;
+        min-width: 350px;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .company-name {
+        font-size: 2.8em;
+        font-weight: 900;
+        color: #00ff88;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+
+      .tagline {
+        font-size: 1.2em;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 300;
+      }
+
+      .main-offer {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .offer-title {
+        font-size: 2.2em;
+        font-weight: 700;
+        margin-bottom: 15px;
+        background: linear-gradient(45deg, #fff, #00ff88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .network-type {
+        background: rgba(0, 255, 136, 0.2);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 1.1em;
+        font-weight: 600;
+        border: 2px solid #00ff88;
+        margin-bottom: 20px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .service-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .service-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-icon {
+        font-size: 2em;
+        margin-bottom: 8px;
+      }
+
+      .service-text {
+        font-size: 0.9em;
+        font-weight: 600;
+      }
+
+      .benefits {
+        margin: 20px 0;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 1em;
+      }
+
+      .benefit-icon {
+        color: #00ff88;
+        margin-right: 12px;
+        font-size: 1.2em;
+      }
+
+      .price-highlight {
+        background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+        padding: 15px 25px;
+        border-radius: 20px;
+        text-align: center;
+        margin: 20px 0;
+        font-weight: 700;
+        font-size: 1.1em;
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+      }
+
+      .support-badge {
+        background: rgba(0, 255, 136, 0.2);
+        padding: 12px 20px;
+        border-radius: 15px;
+        text-align: center;
+        border: 2px solid #00ff88;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .cta-button {
+        background: linear-gradient(45deg, #00ff88, #00cc66);
+        color: #003366;
+        border: none;
+        padding: 18px 30px;
+        font-size: 1.2em;
+        font-weight: 700;
+        border-radius: 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 15px 35px rgba(0, 255, 136, 0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 45px rgba(0, 255, 136, 0.6);
+      }
+
+      .whatsapp-button {
+        background: linear-gradient(45deg, #25d366, #128c7e);
+        color: white;
+        border: none;
+        padding: 18px 30px;
+        font-size: 1.1em;
+        font-weight: 600;
+        border-radius: 25px;
+        cursor: pointer;
+        letter-spacing: 1px;
+        box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .whatsapp-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 45px rgba(37, 211, 102, 0.6);
+      }
+
+      /* Decoración de fondo */
+      .bg-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: radial-gradient(
+            circle at 30% 30%,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 70% 70%,
+            rgba(0, 255, 136, 0.2) 2px,
+            transparent 2px
+          );
+        background-size: 50px 50px;
+      }
+
+      /* Botón flotante de WhatsApp */
+      .floating-whatsapp {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #25d366, #128c7e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        animation: pulse-float 2s ease-in-out infinite;
+      }
+
+      .floating-whatsapp:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.7);
+      }
+
+      @keyframes pulse-float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .floating-whatsapp svg {
+        width: 30px;
+        height: 30px;
+        fill: white;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .promo-container {
-            width: 100%;
-            max-width: 1000px;
-            height: auto;
-            min-height: 650px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-            border-radius: 25px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap;
+          flex-direction: column;
+          margin: 10px;
+          max-width: none;
         }
 
-        /* Lado izquierdo - Visualización de Internet y Fibra Óptica */
-        .left-section {
-            flex: 1.2;
-            min-width: 400px;
-            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            min-height: 400px;
-        }
-
-        /* Centro de conexión principal */
-        .connection-hub {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, #00ff88 0%, #0066ff 70%, transparent 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: hub-pulse 3s ease-in-out infinite;
-            box-shadow: 0 0 50px rgba(0,255,136,0.6);
-        }
-
-        @keyframes hub-pulse {
-            0%, 100% { 
-                transform: scale(1); 
-                box-shadow: 0 0 50px rgba(0,255,136,0.6);
-            }
-            50% { 
-                transform: scale(1.1); 
-                box-shadow: 0 0 80px rgba(0,255,136,0.8), 0 0 120px rgba(0,102,255,0.4);
-            }
-        }
-
-        .hub-core {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(45deg, #ffffff 0%, #00ff88 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            color: #003366;
-            font-weight: bold;
-            animation: rotate-core 8s linear infinite;
-            box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
-        }
-
-        @keyframes rotate-core {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Rayos de conexión que salen del centro */
-        .connection-rays {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .ray {
-            position: absolute;
-            width: 300px;
-            height: 4px;
-            background: linear-gradient(90deg, rgba(0,255,136,0.8) 0%, rgba(0,255,136,0) 100%);
-            transform-origin: 0 50%;
-            animation: ray-pulse 2s ease-in-out infinite;
-            border-radius: 2px;
-            box-shadow: 0 0 15px rgba(0,255,136,0.6);
-        }
-
-        .ray:nth-child(1) { transform: rotate(0deg); animation-delay: 0s; }
-        .ray:nth-child(2) { transform: rotate(45deg); animation-delay: 0.25s; }
-        .ray:nth-child(3) { transform: rotate(90deg); animation-delay: 0.5s; }
-        .ray:nth-child(4) { transform: rotate(135deg); animation-delay: 0.75s; }
-        .ray:nth-child(5) { transform: rotate(180deg); animation-delay: 1s; }
-        .ray:nth-child(6) { transform: rotate(225deg); animation-delay: 1.25s; }
-        .ray:nth-child(7) { transform: rotate(270deg); animation-delay: 1.5s; }
-        .ray:nth-child(8) { transform: rotate(315deg); animation-delay: 1.75s; }
-
-        @keyframes ray-pulse {
-            0%, 100% { 
-                opacity: 0.3; 
-                transform: scaleX(0.8); 
-            }
-            50% { 
-                opacity: 1; 
-                transform: scaleX(1.2); 
-            }
-        }
-
-        /* Dispositivos conectados */
-        .connected-devices {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .device {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8em;
-            color: white;
-            animation: device-float 4s ease-in-out infinite;
-            box-shadow: 0 10px 25px rgba(79,172,254,0.4);
-        }
-
-        .device:nth-child(1) { 
-            top: 10%; 
-            left: 15%; 
-            animation-delay: 0s; 
-        }
-        .device:nth-child(2) { 
-            top: 15%; 
-            right: 10%; 
-            animation-delay: 1s; 
-        }
-        .device:nth-child(3) { 
-            bottom: 20%; 
-            left: 10%; 
-            animation-delay: 2s; 
-        }
-        .device:nth-child(4) { 
-            bottom: 15%; 
-            right: 15%; 
-            animation-delay: 3s; 
-        }
-
-        @keyframes device-float {
-            0%, 100% { 
-                transform: translateY(0px) scale(1); 
-                box-shadow: 0 10px 25px rgba(79,172,254,0.4);
-            }
-            50% { 
-                transform: translateY(-15px) scale(1.05); 
-                box-shadow: 0 20px 40px rgba(79,172,254,0.6);
-            }
-        }
-
-        /* Ondas de señal WiFi */
-        .wifi-waves {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .wave {
-            position: absolute;
-            border: 3px solid rgba(0,255,136,0.3);
-            border-radius: 50%;
-            animation: wave-expand 3s ease-out infinite;
-        }
-
-        .wave:nth-child(1) { 
-            width: 150px; 
-            height: 150px; 
-            margin: -75px 0 0 -75px; 
-            animation-delay: 0s; 
-        }
-        .wave:nth-child(2) { 
-            width: 250px; 
-            height: 250px; 
-            margin: -125px 0 0 -125px; 
-            animation-delay: 1s; 
-        }
-        .wave:nth-child(3) { 
-            width: 350px; 
-            height: 350px; 
-            margin: -175px 0 0 -175px; 
-            animation-delay: 2s; 
-        }
-
-        @keyframes wave-expand {
-            0% { 
-                transform: scale(0); 
-                opacity: 1; 
-                border-color: rgba(0,255,136,0.8); 
-            }
-            100% { 
-                transform: scale(1); 
-                opacity: 0; 
-                border-color: rgba(0,255,136,0); 
-            }
-        }
-
-        /* Lado derecho - Información */
+        .left-section,
         .right-section {
-            flex: 1;
-            min-width: 350px;
-            padding: 50px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+          min-width: 100%;
+          flex: none;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
+        .left-section {
+          min-height: 300px;
+        }
+
+        .right-section {
+          padding: 30px 25px;
         }
 
         .company-name {
-            font-size: 2.8em;
-            font-weight: 900;
-            color: #00ff88;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .tagline {
-            font-size: 1.2em;
-            color: rgba(255,255,255,0.9);
-            font-weight: 300;
-        }
-
-        .main-offer {
-            text-align: center;
-            margin: 20px 0;
+          font-size: 2.2em;
         }
 
         .offer-title {
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, #fff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .network-type {
-            background: rgba(0,255,136,0.2);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 1.1em;
-            font-weight: 600;
-            border: 2px solid #00ff88;
-            margin-bottom: 20px;
+          font-size: 1.8em;
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
+          grid-template-columns: 1fr;
+          gap: 10px;
         }
 
-        .service-item {
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.2);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .service-icon {
-            font-size: 2em;
-            margin-bottom: 8px;
-        }
-
-        .service-text {
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        .benefits {
-            margin: 20px 0;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            font-size: 1em;
-        }
-
-        .benefit-icon {
-            color: #00ff88;
-            margin-right: 12px;
-            font-size: 1.2em;
-        }
-
-        .price-highlight {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-            padding: 15px 25px;
-            border-radius: 20px;
-            text-align: center;
-            margin: 20px 0;
-            font-weight: 700;
-            font-size: 1.1em;
-            box-shadow: 0 10px 25px rgba(255,107,107,0.4);
-        }
-
-        .support-badge {
-            background: rgba(0,255,136,0.2);
-            padding: 12px 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #00ff88;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .cta-button {
-            background: linear-gradient(45deg, #00ff88, #00cc66);
-            color: #003366;
-            border: none;
-            padding: 18px 30px;
-            font-size: 1.2em;
-            font-weight: 700;
-            border-radius: 25px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 15px 35px rgba(0,255,136,0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 45px rgba(0,255,136,0.6);
-        }
-
-        .whatsapp-button {
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            color: white;
-            border: none;
-            padding: 18px 30px;
-            font-size: 1.1em;
-            font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            letter-spacing: 1px;
-            box-shadow: 0 15px 35px rgba(37,211,102,0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .whatsapp-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 45px rgba(37,211,102,0.6);
-        }
-
-        /* Decoración de fondo */
-        .bg-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 2px, transparent 2px),
-                        radial-gradient(circle at 70% 70%, rgba(0,255,136,0.2) 2px, transparent 2px);
-            background-size: 50px 50px;
-        }
-
-        /* Botón flotante de WhatsApp */
         .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(37,211,102,0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            animation: pulse-float 2s ease-in-out infinite;
+          bottom: 20px;
+          right: 20px;
+          width: 55px;
+          height: 55px;
         }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(37,211,102,0.7);
-        }
-
-        @keyframes pulse-float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .floating-whatsapp svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .promo-container {
-                flex-direction: column;
-                margin: 10px;
-                max-width: none;
-            }
-
-            .left-section, .right-section {
-                min-width: 100%;
-                flex: none;
-            }
-
-            .left-section {
-                min-height: 300px;
-            }
-
-            .right-section {
-                padding: 30px 25px;
-            }
-
-            .company-name {
-                font-size: 2.2em;
-            }
-
-            .offer-title {
-                font-size: 1.8em;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .floating-whatsapp {
-                bottom: 20px;
-                right: 20px;
-                width: 55px;
-                height: 55px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="promo-container">
-        <div class="left-section">
-            <!-- Centro de conexión principal -->
-            <div class="connection-hub">
-                <div class="hub-core">
-                    📶
-                </div>
-            </div>
-            
-            <!-- Rayos de conexión -->
-            <div class="connection-rays">
-                <div class="ray"></div>
-                <div class="ray"></div>
-                <div class="ray"></div>
-                <div class="ray"></div>
-                <div class="ray"></div>
-                <div class="ray"></div>
-                <div class="ray"></div>
-                <div class="ray"></div>
-            </div>
-            
-            <!-- Ondas WiFi -->
-            <div class="wifi-waves">
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-            </div>
-            
-            <!-- Dispositivos conectados -->
-            <div class="connected-devices">
-                <div class="device">💻</div>
-                <div class="device">📱</div>
-                <div class="device">🎮</div>
-                <div class="device">📺</div>
-            </div>
+      <div class="left-section">
+        <!-- Centro de conexión principal -->
+        <div class="connection-hub">
+          <div class="hub-core">📶</div>
         </div>
-        
-        <div class="right-section">
-            <div class="bg-pattern"></div>
-            
-            <div class="header">
-                <div class="company-name">NANDO NET</div>
-                <div class="tagline">Conectando tu mundo</div>
-            </div>
-            
-            <div class="main-offer">
-                <div class="offer-title">INTERNET FIBRA ÓPTICA</div>
-                <div class="network-type">🌐 RED DEDICADA SUBIDA Y BAJADA</div>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon">📺</div>
-                    <div class="service-text">NETFLIX<br>STREAMING HD</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">🎮</div>
-                    <div class="service-text">JUEGOS<br>ONLINE</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">🎬</div>
-                    <div class="service-text">YOUTUBE<br>DISNEY+</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">🏠</div>
-                    <div class="service-text">USO<br>DOMÉSTICO</div>
-                </div>
-            </div>
-            
-            <div class="benefits">
-                <div class="benefit-item">
-                    <span class="benefit-icon">✅</span>
-                    <span>Velocidades simétricas de subida y bajada</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-icon">💰</span>
-                    <span>Precios más baratos que empresas tradicionales</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-icon">⚡</span>
-                    <span>Perfecto para streaming y gaming</span>
-                </div>
-            </div>
-            
-            <div class="price-highlight">
-                💲 PRECIOS ACCESIBLES Y COMPETITIVOS
-            </div>
-            
-            <div class="support-badge">
-                🛠 SOPORTE TÉCNICO 24/7
-            </div>
-            
-            <div class="buttons-container">
-                <button class="cta-button" onclick="window.open('mailto:info@nandonet.com?subject=Solicitud de Información - Internet Fibra Óptica&body=Hola, me interesa conocer más sobre sus planes de internet fibra óptica. Por favor, envíenme información detallada sobre precios y disponibilidad en mi zona.', '_blank')">
-                    SOLICITAR INFORMACIÓN
-                </button>
-                
-                <a href="#" class="whatsapp-button" onclick="openWhatsApp()">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
-                    </svg>
-                    CLICK AQUÍ PARA MÁS INFO
-                </a>
-            </div>
+
+        <!-- Rayos de conexión -->
+        <div class="connection-rays">
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
         </div>
+
+        <!-- Ondas WiFi -->
+        <div class="wifi-waves">
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+        </div>
+
+        <!-- Dispositivos conectados -->
+        <div class="connected-devices">
+          <div class="device">💻</div>
+          <div class="device">📱</div>
+          <div class="device">🎮</div>
+          <div class="device">📺</div>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <div class="bg-pattern"></div>
+
+        <div class="header">
+          <div class="company-name">NANDO NET</div>
+          <div class="tagline">Conectando tu mundo</div>
+        </div>
+
+        <div class="main-offer">
+          <div class="offer-title">INTERNET FIBRA ÓPTICA</div>
+          <div class="network-type">🌐 RED DEDICADA SUBIDA Y BAJADA</div>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="service-icon">📺</div>
+            <div class="service-text">NETFLIX<br />STREAMING HD</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🎮</div>
+            <div class="service-text">JUEGOS<br />ONLINE</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🎬</div>
+            <div class="service-text">YOUTUBE<br />DISNEY+</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🏠</div>
+            <div class="service-text">USO<br />DOMÉSTICO</div>
+          </div>
+        </div>
+
+        <div class="benefits">
+          <div class="benefit-item">
+            <span class="benefit-icon">✅</span>
+            <span>Velocidades simétricas de subida y bajada</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">💰</span>
+            <span>Precios más baratos que empresas tradicionales</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">⚡</span>
+            <span>Perfecto para streaming y gaming</span>
+          </div>
+        </div>
+
+        <div class="price-highlight">💲 PRECIOS ACCESIBLES Y COMPETITIVOS</div>
+
+        <div class="support-badge">🛠 SOPORTE TÉCNICO 24/7</div>
+
+        <div class="buttons-container">
+          <button
+            class="cta-button"
+            onclick="window.open('mailto:info@nandonet.com?subject=Solicitud de Información - Internet Fibra Óptica&body=Hola, me interesa conocer más sobre sus planes de internet fibra óptica. Por favor, envíenme información detallada sobre precios y disponibilidad en mi zona.', '_blank')"
+          >
+            SOLICITAR INFORMACIÓN
+          </button>
+
+          <a href="#" class="whatsapp-button" onclick="openWhatsApp()">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"
+              />
+            </svg>
+            CLICK AQUÍ PARA MÁS INFO
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Botón flotante de WhatsApp -->
     <div class="floating-whatsapp" onclick="openWhatsApp()">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
-        </svg>
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"
+        />
+      </svg>
     </div>
 
     <script>
-        function openWhatsApp() {
-            // Cambia este número por el número de WhatsApp de NANDO NET
-            const phoneNumber = '51994051787'; // Formato: código de país + número (sin + ni espacios)
-            
-            // Mensaje predeterminado
-            const message = `🌐 ¡Hola NANDO NET! 
+      function openWhatsApp() {
+        // Cambia este número por el número de WhatsApp de NANDO NET
+        const phoneNumber = "51994051787"; // Formato: código de país + número (sin + ni espacios)
+
+        // Mensaje predeterminado
+        const message = `🌐 ¡Hola NANDO NET! 
 
 Me interesa conocer más información sobre sus planes de Internet Fibra Óptica.
 
@@ -646,49 +706,51 @@ Me gustaría saber:
 ✅ Promociones actuales
 
 ¡Espero su respuesta! 😊`;
-            
-            // Codificar el mensaje para URL
-            const encodedMessage = encodeURIComponent(message);
-            
-            // Crear el enlace de WhatsApp
-            const whatsappURL = https://wa.me/${phoneNumber}?text=${encodedMessage};
-            
-            // Abrir WhatsApp
-            window.open(whatsappURL, '_blank');
-        }
 
-        // Funcionalidad adicional: detectar si se hace clic en el área de la empresa para más info
-        document.querySelector('.company-name').addEventListener('click', function() {
-            openWhatsApp();
+        // Codificar el mensaje para URL
+        const encodedMessage = encodeURIComponent(message);
+
+        // Crear el enlace de WhatsApp
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        // Abrir WhatsApp
+        window.open(whatsappURL, "_blank");
+      }
+
+      // Funcionalidad adicional: detectar si se hace clic en el área de la empresa para más info
+      document
+        .querySelector(".company-name")
+        .addEventListener("click", function () {
+          openWhatsApp();
         });
 
-        // Efectos adicionales para mejorar la experiencia
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animación suave al cargar la página
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease-in-out';
-                document.body.style.opacity = '1';
-            }, 100);
+      // Efectos adicionales para mejorar la experiencia
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animación suave al cargar la página
+        document.body.style.opacity = "0";
+        setTimeout(() => {
+          document.body.style.transition = "opacity 0.5s ease-in-out";
+          document.body.style.opacity = "1";
+        }, 100);
 
-            // Efecto de hover en los servicios
-            const serviceItems = document.querySelectorAll('.service-item');
-            serviceItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px) scale(1.05)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
+        // Efecto de hover en los servicios
+        const serviceItems = document.querySelectorAll(".service-item");
+        serviceItems.forEach((item) => {
+          item.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-10px) scale(1.05)";
+          });
+
+          item.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+          });
         });
+      });
 
-        // Función para mostrar notificación de contacto exitoso
-        function showContactNotification() {
-            const notification = document.createElement('div');
-            notification.innerHTML = '✅ ¡Perfecto! Te contactaremos pronto';
-            notification.style.cssText = `
+      // Función para mostrar notificación de contacto exitoso
+      function showContactNotification() {
+        const notification = document.createElement("div");
+        notification.innerHTML = "✅ ¡Perfecto! Te contactaremos pronto";
+        notification.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
@@ -701,17 +763,17 @@ Me gustaría saber:
                 box-shadow: 0 10px 25px rgba(0,255,136,0.4);
                 animation: slideIn 0.5s ease-out;
             `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
 
-        // CSS para la animación de notificación
-        const style = document.createElement('style');
-        style.textContent = `
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+          notification.remove();
+        }, 3000);
+      }
+
+      // CSS para la animación de notificación
+      const style = document.createElement("style");
+      style.textContent = `
             @keyframes slideIn {
                 from {
                     transform: translateX(100%);
@@ -723,7 +785,7 @@ Me gustaría saber:
                 }
             }
         `;
-        document.head.appendChild(style);
+      document.head.appendChild(style);
     </script>
-</body>
+  </body>
 </html>
